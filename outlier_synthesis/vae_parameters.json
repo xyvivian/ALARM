@@ -1,0 +1,34 @@
+{
+    "dataset_name": "pkdd1998",
+    "lr": 5e-4,
+    "iteration": 1500,
+    "batch_size": 256,
+    "input_file": "../data/pkdd1998/ptrans.csv",
+    "num_normal_points": 1000,
+    "num_outlier_points": 20,
+    "hidden_dim": 15,
+    "num_outlier_clusters": 3,
+    "epsilon": 0.5,
+    "type_": [
+        "global",
+        "global",
+        "global"
+    ],
+    "device": "cuda",
+    "output_path": "../data/pkdd1998",
+    "inflated_features": [
+        [
+            "amount",
+            "operation"
+        ],
+        [
+            "balance",
+            "k_symbol",
+            "operation"
+        ],
+        [
+            "amount",
+            "bank"
+        ]
+    ]
+}

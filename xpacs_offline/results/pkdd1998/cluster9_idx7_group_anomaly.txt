@@ -1,0 +1,2 @@
+index,type,operation,amount,balance,bank,k_symbol
+214,ISSUE,TRANSFER TO ACCOUNT,6025.0,42814.0,EF,DUCHOD

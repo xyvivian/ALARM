@@ -1,0 +1,2 @@
+index,type,operation,amount,balance,bank,k_symbol
+1049,ISSUE,TRANSFER TO ACCOUNT,42797.0,48508.0,YZ,DUCHO

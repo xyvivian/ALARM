@@ -1,0 +1,2 @@
+index,type,operation,amount,balance,bank,k_symbol
+136,ISSUE,TRANSFER TO ACCOUNT,11172.0,81934.0,AB,unknown

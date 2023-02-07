@@ -1,0 +1,18 @@
+{
+    "projection": true,
+    "dataset_name": "ids",
+    "explain": true,
+    "explain_method": "random_walk",
+    "projdim": 60,
+    "nchains": 300,
+    "depth": 20,
+    "input_file": "../data/ids/input_data.txt",
+    "output_path": "../data/ids",
+    "output_file": "../results/ids/saved_rules.txt",
+    "has_label": true,
+    "topk": 300,
+    "cluster_num": 10,
+    "use_label": true,
+    "top_features": 10,
+    "load_saved": false
+}

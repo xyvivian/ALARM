@@ -1,0 +1,2 @@
+index,type,operation,amount,balance,bank,k_symbol
+1067,ISSUE,TRANSFER TO ACCOUNT,6845.1435881684265,73221.09299178424,IJ,POJISTNE
