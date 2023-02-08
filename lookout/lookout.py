@@ -248,7 +248,7 @@ def plot(budget,
                         color_idx.append(3)
         
         dfx["color"] = color_idx # [0 if i not in list(anomaly_X.index) else 1 if i in score else 2 for i in dfx[0]]
-        newPal = {0 :'##696969' , 1 :'##DC143C', 2 :'##3CB371'}
+        newPal = {0 :'#696969' , 1 :'#DC143C', 2 :'#3CB371'}
         fig = plt.figure(figsize = (4,3),dpi = 400)
         ax = fig.add_subplot(111)
         ax.spines['top'].set_visible(False)
@@ -268,11 +268,11 @@ def plot(budget,
         #print(dfx.loc[dfx["color"] == 0].index)          
             
         plt.scatter(X_encoded[dfx.loc[dfx["color"] == 0].index,(x)],X_encoded[dfx.loc[dfx["color"] == 0].index,(y)],\
-                    c='##696969',edgecolor='black',linewidth=0.3,alpha=0.7)
+                    c='#696969',edgecolor='black',linewidth=0.3,alpha=0.7)
         plt.scatter(X_encoded[dfx.loc[dfx["color"] == 1].index,(x)],X_encoded[dfx.loc[dfx["color"] == 1].index,(y)],\
-                    c='##DC143C',edgecolor='black',linewidth=0.3,alpha=0.85, s= 52, marker = "*")
+                    c='#DC143C',edgecolor='black',linewidth=0.3,alpha=0.85, s= 52, marker = "*")
         plt.scatter(X_encoded[dfx.loc[dfx["color"] == 2].index,(x)],X_encoded[dfx.loc[dfx["color"] == 2].index,(y)],\
-                    c='##3CB371',edgecolor='black',linewidth=0.3,alpha=0.7, s = 30, marker = "s")
+                    c='#3CB371',edgecolor='black',linewidth=0.3,alpha=0.7, s = 30, marker = "s")
         figure_list.append(fig)
     return figure_list
 
