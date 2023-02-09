@@ -1,5 +1,7 @@
 # ALARM: Analyst in the Loop Anomaly Reasoning and Management
 
+![Overview](overview.png)
+
 ## Guidance of Running
 
 ### Configuration Installation
