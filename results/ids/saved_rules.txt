@@ -1,0 +1,8 @@
+For 3 clusters, cluster index 1 is selected. 
+Feature bwd_iat_max between: 5650449.975 and 58800000.588.Feature pkt_len_mean between: 190.000 and 450.000.Feature active_std between: 0.000 and 517116.758.
+Current COVERAGE: 0.600, Current PURITY:0.084. 
+
+For 3 clusters, cluster index 0 is selected. 
+Feature bwd_urg_flags between: 0.000 and 0.000.Feature fwd_pkts/b_avg between: 0.000 and 0.000.Feature flow_duration between: 13000001.000 and 73000001.000.Feature protocol between: 6.000 and 6.000.Feature active_std between: 9000000.000 and 23500000.000.
+Current COVERAGE: 0.000, Current PURITY:1.000. 
+

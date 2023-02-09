@@ -1,18 +1,18 @@
 {
     "projection": true,
-    "dataset_name": "ids",
+    "dataset_name": "pkdd1998",
     "explain": true,
     "explain_method": "random_walk",
     "projdim": 60,
     "nchains": 300,
     "depth": 20,
-    "input_file": "../data/ids/input_data.txt",
-    "output_path": "../data/ids",
-    "output_file": "../results/ids/saved_rules.txt",
+    "input_file": "../data/pkdd1998/generated_synthetic.txt",
+    "output_path": "../data/pkdd1998",
+    "output_file": "../results/pkdd1998/saved_rules.txt",
     "has_label": true,
     "topk": 300,
     "cluster_num": 10,
     "use_label": true,
     "top_features": 10,
-    "load_saved": false
+    "load_saved": true
 }

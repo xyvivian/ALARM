@@ -239,7 +239,7 @@ def layout(DASHBOARD_DATA):
                                         id="target_score_cog",
                                     ),
                                     html.I(
-                                        children="Score Calculation",
+                                        children="Rule Design Interface",
                                         style={
                                             "color": "black",
                                             "text-align": "center",
@@ -265,7 +265,7 @@ def layout(DASHBOARD_DATA):
                                 dbc.CardBody(
                                     [
                                         html.Div(
-                                            "Selected Rule Candidate",
+                                            "Selected Rules",
                                             style={"textAlign": "center"},
                                         ),
                                         html.Div(id="output-container-range-slider"),

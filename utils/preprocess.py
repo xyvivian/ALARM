@@ -27,7 +27,8 @@ class DashboardData:
         feature_columns,
         feature_names,
         parallel_data,
-        encoders
+        encoders,
+        explanation_value
     ):
         self.graph_data = graph_data
         self.dropdown_options = dropdown_options
@@ -39,14 +40,16 @@ class DashboardData:
         self.features = feature_names
         self.parallel_data =parallel_data
         self.encoders = encoders
+        self.explanation = explanation_value
 
 
 def prepare_data(
     all_result,
     original_data,
     anomaly_col,
+    explanation_value,
     feature_names=None,
-    cat_dim_lst = [],
+    cat_dim_lst = [], 
 ):
     #optimal k is a integer value
     optimal_k = all_result["optimal cluster"].iloc[0]
@@ -87,8 +90,8 @@ def prepare_data(
         feature_columns,
         feature_names,
         parallel_data,
-        encoders
+        encoders,
+        explanation_value
     )
-    print(dashboard_data.cluster_options)
+    #print(dashboard_data.cluster_options)
     return dashboard_data
-

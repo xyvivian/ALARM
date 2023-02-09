@@ -38,6 +38,7 @@ class Parameters():
         self.input_file = json_["input_file"][3:]
         self.dataset_name = json_["dataset_name"]
         self.output_file = json_["output_file"][3:]
+        self.has_label = json_["has_label"]
 
 parameters = Parameters("parameters.json")
 #feature_names = None
@@ -45,7 +46,7 @@ dataset_name = parameters.dataset_name
 output_file = parameters.output_file
 
 #load the data, X: features, y:label, data index and feature names
-X, data_index ,feature_names = utils.get_driver(parameters.input_file)
+X, data_index ,feature_names = utils.get_driver(parameters.input_file, parameters.has_label)
 all_result = utils.load_all_result("data/%s/concatenate_result.txt" % dataset_name)
 
 #Set GLOBAL variable - FEAT_NAME (feature names)
@@ -85,7 +86,8 @@ DASHBOARD_DATA = preprocess.prepare_data(
                   original_data = X,
                   feature_names=feature_names,
                   cat_dim_lst = cat_dim_lst,
-                  anomaly_col = anomaly_col)
+                  anomaly_col = anomaly_col,
+                  explanation_value = explanation_value)
 #print("Overall dtypes")
 #print((DASHBOARD_DATA.graph_data.dtypes))
 #print(DASHBOARD_DATA.parallel_data.dtypes)
@@ -343,7 +345,7 @@ Output: A list of Lookout plots which explain the selected cluster of outliers
 )
 def update_lookout(selected_k, cluster_number, budget):
     kmeans_id = selected_k.split(" ")[0]
-    cluster_id = str(int(cluster_number[7:]) + 1)
+    cluster_id = str(int(cluster_number[7:]))
     budget = budget
     i = 1
     children = []
@@ -770,14 +772,18 @@ def update_output(feat1,value1,feat2, value2,):
 def toggle_modal(hover_data, close_button, is_open):
     if hover_data or close_button:
         s = DASHBOARD_DATA.graph_data[
-            round(DASHBOARD_DATA.graph_data["x"], 3)
-            == round(hover_data["points"][0]["x"], 3)
-        ].iloc[0]
-        s = s[DASHBOARD_DATA.features]
-        s = s.sort_values(ascending=False)
-        s = s[:10]
+            round(DASHBOARD_DATA.graph_data["x"], 5)
+            == round(hover_data["points"][0]["x"], 5)
+        ].index[0]
+        index = int(s)
+        #print(DASHBOARD_DATA.explanation)
+        explanations = DASHBOARD_DATA.explanation.loc[int(s)]
+        #s = s[DASHBOARD_DATA.features]
+        s = explanations.sort_values(ascending=False)
+        #s = s[:10]
+        #print(s)
         s = pd.DataFrame({"feature": s.index, "importance": s.values})
-        fig = px.bar(s, x="importance", y="feature", orientation="h")
+        fig = px.bar(s, x="importance", y="feature", orientation="h", title= "Feature explanation for index %d" % index)
         return not is_open, fig
 
 
