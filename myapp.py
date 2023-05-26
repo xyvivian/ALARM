@@ -99,7 +99,7 @@ DASHBOARD_DATA = preprocess.prepare_data(
 ASSETS_PATH =  dataset_name + "/"
 FONT_AWESOME = "https://use.fontawesome.com/releases/v5.10.2/css/all.css"
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, FONT_AWESOME], suppress_callback_exceptions=True))
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, FONT_AWESOME], suppress_callback_exceptions=True)
 app.layout = layout(DASHBOARD_DATA)
 
 
