@@ -99,7 +99,7 @@ DASHBOARD_DATA = preprocess.prepare_data(
 ASSETS_PATH =  dataset_name + "/"
 FONT_AWESOME = "https://use.fontawesome.com/releases/v5.10.2/css/all.css"
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, FONT_AWESOME])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, FONT_AWESOME], suppress_callback_exceptions=True))
 app.layout = layout(DASHBOARD_DATA)
 
 
@@ -308,8 +308,8 @@ Output: dropdown options after the updates (the features are added using dynamic
     State("parallel_features", "children"),
 )
 def update_parallel_feature_num(num_parallel_features, children):
-    size = len(children)
-    for i in range(size + 1, int(num_parallel_features) + 1):
+    children = []
+    for i in range(1, int(num_parallel_features) + 1):
         children.append(dynamic_control_maker(str(i)))
     return children
 
@@ -785,6 +785,8 @@ def toggle_modal(hover_data, close_button, is_open):
         s = pd.DataFrame({"feature": s.index, "importance": s.values})
         fig = px.bar(s, x="importance", y="feature", orientation="h", title= "Feature explanation for index %d" % index)
         return not is_open, fig
+    else:
+        return is_open, None
 
 
 """
