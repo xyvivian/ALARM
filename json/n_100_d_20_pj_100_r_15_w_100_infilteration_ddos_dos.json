@@ -1,0 +1,6 @@
+{"nchains":100,
+ "depth": 20,
+ "projdim": 100, 
+ "r": 15,
+ "w": 100,
+ "attack_type":["infilteration","ddos", "dos"]}

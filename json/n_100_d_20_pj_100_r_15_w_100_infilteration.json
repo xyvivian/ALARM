@@ -1,0 +1,6 @@
+{"nchains": 100,
+ "depth": 35,
+ "projdim": 200, 
+ "r": 20,
+ "w": 100,
+ "attack_type":["infilteration"]}
